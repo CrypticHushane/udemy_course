@@ -28,7 +28,7 @@ class ContactUsController extends Controller
             "messageInput" => $input['message'],
         ],
         function($m){
-            $m->from($email);
+            $m->from('kingshango999@gmail.com');
             $m->to('kingshango99@gmail.com');
         }
     );

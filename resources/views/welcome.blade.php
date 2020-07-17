@@ -9,13 +9,15 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
 
-        <script src="/js/website.js"></script>
+        
     </head>
     <body>
-        <div class="app">
-            <div class="flex-center position-ref full-height">
+        <div id="app">
+            <contact-us-form></contact-us-form>
+            {{-- <div class="flex-center position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
@@ -53,7 +55,8 @@
                       <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                  </form> --}}
         </div>
+        <script src="/js/website.js"></script>
     </body>
 </html>
