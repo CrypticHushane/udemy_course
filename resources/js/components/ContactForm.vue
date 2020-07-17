@@ -10,6 +10,8 @@
                         id="name"
                         name="name"
                         placeholder="Full Name"
+                        v-model="name"
+                        @keyup="buttonText = name"
                     />
                 </div>
                 <div class="form-group">
@@ -32,8 +34,8 @@
                     ></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <div btn btn-primary>
-                    Click me to change text to name text
+                <div class="btn btn-primary" @click="buttonText = name">
+                    {{ buttonText }}
                 </div>
             </form>
         </div>
@@ -43,7 +45,11 @@
 <script>
 export default {
     data() {
-        return { loaded: false };
+        return {
+            loaded: false,
+            buttonText: "Click me to change text to name text",
+            name: null
+        };
     },
     mounted() {},
     methods: {}
