@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    try {
-        DB::connection()->getPdo();
-        echo "IT WORK YF!!";
-    } catch (\Exception $e) {
-        die("Could not conect to database. error: " . $e);
-    }
+    return view('welcome');
 });
+
+Route::post('/contactus', 'ContactUsController@index');
