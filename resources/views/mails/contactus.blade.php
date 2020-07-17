@@ -13,8 +13,8 @@
     </head>
     <body>
         <h1>Yow wah gwaan!</h1>
-        <p>{{ $name }} : {{ $email }}</p>
+        <p>{{ $nameInput }} : {{ $email }}</p>
         <p>Sent you a message</p>
-        <p>Message: {{ $message }}</p>
+        <p>Message: {{ $messageInput }}</p>
     </body>
 </html>

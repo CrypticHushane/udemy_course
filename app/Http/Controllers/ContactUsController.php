@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 
 class ContactUsController extends Controller
 {
@@ -15,12 +16,21 @@ class ContactUsController extends Controller
         ]);
         // dump($input);
 
-        return view('mails.contactus', [
-            "name" => $input['name'],
-            "email" => $input['email'],
-            "message" => $input['message'],
-        ]);
+        // return view('mails.contactus', [
+        //     "nameInput" => $input['name'],
+        //     "email" => $input['email'],
+        //     "messageInput" => $input['message'],
+        // ]);
 
-        Mail::send();
+        Mail::send('mails.contactus', [
+            "nameInput" => $input['name'],
+            "email" => $input['email'],
+            "messageInput" => $input['message'],
+        ],
+        function($m){
+            $m->from($email);
+            $m->to('kingshango99@gmail.com');
+        }
+    );
     }
 }
