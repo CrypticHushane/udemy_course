@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 
 Route::post('/contactus', 'ContactUsController@index');
+Route::post('/contactus/ajax', 'ContactUsController@sendMessage');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
