@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Special;
 use Illuminate\Http\Request;
 
 class SpecialsController extends Controller
@@ -13,7 +13,10 @@ class SpecialsController extends Controller
      */
     public function index()
     {
-        return view("admin.specials.index");
+        $specials = Special::all();
+        return view("admin.specials.index", [
+            'specials' => $specials
+        ]);
     }
 
     /**

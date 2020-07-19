@@ -21,35 +21,35 @@
             <img src="./assets/StoppageTime11.png" width="30" height="30" class="d-inline-block align-top" alt="">
             {{ config('app.name')}}
             </a>
+            @foreach ($pages as $page)
+                                <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
+                            @endforeach
+                        
         </nav>
         <div id="app">
             <div class="flex-center position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            @foreach ($pages as $page)
-                                <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
-                            @endforeach
-                        
+                           
                         @else
                             <a href="{{ route('login') }}">Login</a>
     
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
-                                {{-- @foreach ($pages as $page)
-                                    <a href="#">{{$page['name']}}</a>
-                                @endforeach --}}
                             @endif
                             
                         
                         @endauth
                     </div>
                 @endif
-               
-               
-        </div>
+            </div>
         
-        <contact-us-form></contact-us-form>
-    </div>
+            {{-- @foreach ($pages as $page)
+                <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
+            @endforeach --}}
+            {{-- <contact-us-form></contact-us-form> --}}
+        </div>
+        {{-- <script src="../../js/website.js"></script> --}}
     </body>
 </html>

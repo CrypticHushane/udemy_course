@@ -15,6 +15,10 @@ class CreateSpecialsTable extends Migration
     {
         Schema::create('specials', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->decimal('was_priced', 10, 2);
+            $table->decimal('current_price', 10, 2);
+            $table->string('description');
             $table->timestamps();
         });
     }

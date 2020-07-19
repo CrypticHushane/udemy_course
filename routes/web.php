@@ -14,16 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'ContactUsController@pages');
-// Route::get('/contact-us', function(){ return view('mails.contactus');});
-// Route::post('/contactus/ajax', 'ContactUsController@index');
+Route::get('/contact-us', function(){ return view('mails.contactus');});
+Route::post('/contactus/ajax', 'ContactUsController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group([
     "middleware" => 'auth'],
     function(){
-        Route::resource('admin/special', '@SpecialsController');
-        Route::get('/contact-us', function(){ return view('mails.contactus');});
-        Route::post('/contactus/ajax', 'ContactUsController@index');
+        Route::resource('admin/specials', 'SpecialsController');
+        
     }
 );

@@ -74,6 +74,7 @@
 
         <main class="py-4">
             @yield('content')
+            {{-- @include('welcome') --}}
         </main>
     </div>
 </body>

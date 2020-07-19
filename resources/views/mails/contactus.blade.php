@@ -19,11 +19,6 @@
     </head>
     <body>
         <div id="app">
-            <h1>
-                {{-- Name: {{$nameInput}}
-                Email: {{$email}}
-                Message: {{$messageInput}} --}}
-            </h1>
             <contact-us-form></contact-us-form>
             
         </div>
