@@ -19,7 +19,7 @@
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">
             <img src="./assets/StoppageTime11.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Bootstrap
+            {{ config('app.name')}}
             </a>
         </nav>
         <div id="app">
@@ -27,23 +27,29 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Dashboard</a>
+                            @foreach ($pages as $page)
+                                <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
+                            @endforeach
+                        
                         @else
                             <a href="{{ route('login') }}">Login</a>
     
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
+                                {{-- @foreach ($pages as $page)
+                                    <a href="#">{{$page['name']}}</a>
+                                @endforeach --}}
                             @endif
+                            
+                        
                         @endauth
                     </div>
                 @endif
-                {{-- @include('mails.contactus') --}}
+               
+               
         </div>
-        {{-- <contact-us-form></contact-us-form> --}}
-        <img src="../../assets/StoppageTime1.png"   alt="">
-        <img src="../assets/StoppageTime1.png" alt="">
-        <img src="./assets/StoppageTime1.png"  alt="">
-        <h1>yo</h1>
-        <script src="/js/website.js"></script>
+        
+        <contact-us-form></contact-us-form>
+    </div>
     </body>
 </html>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
-use App\Page;
+use App\Pages;
 
 class ContactUsController extends Controller
 {
@@ -16,7 +16,7 @@ class ContactUsController extends Controller
             'email'=> ['required'],
         ]);
 
-        Mail::send('mails.contactus', [
+        Mail::send('mails.message', [
             "nameInput" => $input['name'],
             "email" => $input['email'],
             "messageInput" => $input['message'],
@@ -29,13 +29,17 @@ class ContactUsController extends Controller
 
         return ([
             'success' => true,
-            'message' => 'Thank you for your Response.We wil get back to you soon'
+            'message' => 'Thank you for your Response.We wil get back to you soon',
+            
         ]);
     }
 
     public function pages(){
         $pages = Pages::all();
-        dd($pages);
+        
+        return view('welcome',[
+            "pages" => $pages,
+        ]);
 
     }
 }

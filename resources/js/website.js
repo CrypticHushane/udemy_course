@@ -3,11 +3,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import Vue from "vue";
-require("./bootstrap");
+import Vue from 'vue';
+require('./bootstrap');
 
-window.Vue = require("vue");
-window.axios = require("axios");
+window.Vue = require('vue');
+window.axios = require('axios');
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,10 +20,7 @@ window.axios = require("axios");
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component(
-    "contact-us-form",
-    require("./components/ContactForm.vue").default
-);
+Vue.component('contact-us-form', require('./components/ContactForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,5 +29,5 @@ Vue.component(
  */
 
 const app = new Vue({
-    el: "#app"
+	el: '#app'
 });

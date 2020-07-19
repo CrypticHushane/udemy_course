@@ -42,6 +42,9 @@
         <div v-if="formSending == true" class="spinner-border text-dark" role="status">
           <span class="sr-only">Loading...</span>
         </div>
+        <a href="/">
+          <div class="btn btn-primary">Home</div>
+        </a>
       </form>
     </div>
   </div>

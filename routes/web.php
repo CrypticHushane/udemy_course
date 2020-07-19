@@ -13,12 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return view('welcome');
-});
-
-Route::post('/contactus', 'ContactUsController@index');
-Route::post('/contactus/ajax', 'ContactUsController@sendMessage');
+Route::get('/', 'ContactUsController@pages');
+// Route::get('/contact-us', function(){ return view('mails.contactus');});
+// Route::post('/contactus/ajax', 'ContactUsController@index');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+    "middleware" => 'auth'],
+    function(){
+        Route::resource('admin/special', '@SpecialsController');
+        Route::get('/contact-us', function(){ return view('mails.contactus');});
+        Route::post('/contactus/ajax', 'ContactUsController@index');
+    }
+);

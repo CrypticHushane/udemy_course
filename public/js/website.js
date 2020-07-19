@@ -1957,6 +1957,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37700,12 +37703,23 @@ var render = function() {
               },
               [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
             )
-          : _vm._e()
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._m(0)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/" } }, [
+      _c("div", { staticClass: "btn btn-primary" }, [_vm._v("Home")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50020,7 +50034,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("contact-us-form", __webpack_require__(/*! ./components/ContactForm.vue */ "./resources/js/components/ContactForm.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('contact-us-form', __webpack_require__(/*! ./components/ContactForm.vue */ "./resources/js/components/ContactForm.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -50028,7 +50042,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("contact-us-form", __webpac
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: "#app"
+  el: '#app'
 });
 
 /***/ }),

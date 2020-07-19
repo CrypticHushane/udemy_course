@@ -20,11 +20,12 @@
     <body>
         <div id="app">
             <h1>
-                {{-- Name: {{$nameInput}}
+                Name: {{$nameInput}}
+                <br>
                 Email: {{$email}}
-                Message: {{$messageInput}} --}}
+                <br>
+                Message: {{$messageInput}}
             </h1>
-            <contact-us-form></contact-us-form>
             
         </div>
         <script src="../../js/website.js"></script>
