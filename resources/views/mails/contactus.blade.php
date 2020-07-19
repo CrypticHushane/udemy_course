@@ -12,9 +12,6 @@
         
     </head>
     <body>
-        <h1>Yow wah gwaan!</h1>
-        <p>{{ $nameInput }} : {{ $email }}</p>
-        <p>Sent you a message</p>
-        <p>Message: {{ $messageInput }}</p>
+        <contact-us-form></contact-us-form>
     </body>
 </html>

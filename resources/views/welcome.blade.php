@@ -10,18 +10,24 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         
     </head>
     <body>
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+            <img src="./assets/StoppageTime11.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Bootstrap
+            </a>
+        </nav>
         <div id="app">
-            <contact-us-form></contact-us-form>
-            {{-- <div class="flex-center position-ref full-height">
+            <div class="flex-center position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Home</a>
+                            <a href="{{ url('/home') }}">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}">Login</a>
     
@@ -31,32 +37,13 @@
                         @endauth
                     </div>
                 @endif
-                <form class="p-5" method="post" action="/contactus">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @csrf
-                    <div class="form-group">
-                      <label for="name">Name: </label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email address: </label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                      </div>
-                    <div class="form-group">
-                      <label for="message">Example textarea</label>
-                      <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form> --}}
+                {{-- @include('mails.contactus') --}}
         </div>
+        {{-- <contact-us-form></contact-us-form> --}}
+        <img src="../../assets/StoppageTime1.png"   alt="">
+        <img src="../assets/StoppageTime1.png" alt="">
+        <img src="./assets/StoppageTime1.png"  alt="">
+        <h1>yo</h1>
         <script src="/js/website.js"></script>
     </body>
 </html>
