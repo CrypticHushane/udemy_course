@@ -18,7 +18,7 @@
         <!-- Image and text -->
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">
-            <img src="./assets/StoppageTime11.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="./assets/StoppageTime1.png" width="30" height="30" class="d-inline-block align-top" alt="">
             {{ config('app.name')}}
             </a>
             @foreach ($pages as $page)
@@ -44,17 +44,24 @@
                     </div>
                 @endif
             </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="/assets/StoppageTime11.png" alt="Card image cap">
+        <div class="row bg-dark">
+            @foreach ($specials as $special)
+            <div class="col-md-3">
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                <img class="card-img-top" src=".\assets\sale.png" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{$special->name}}</h5>
+                  <span>
+                      <h6 class="card-title">Previous Price:$ {{$special->was_priced}}</h6>
+                      <h6 class="card-title">Current Price:$ {{$special->current_price}}</h6>
+                  </span>
+                
+                  <p class="card-text">{{$special->description}}</p>
+                    <a href="/admin/specials/{{$special->id}}/show" class="btn btn-primary">View Special</a>
                 </div>
               </div>
             </div>
+            @endforeach
         </div>
             
         </div>

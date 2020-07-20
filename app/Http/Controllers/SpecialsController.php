@@ -59,7 +59,10 @@ class SpecialsController extends Controller
      */
     public function show($id)
     {
-        //
+        $special = Special::where('id',$id)->first();
+        return view('admin.specials.show', [
+            'special' => $special
+        ]);
     }
 
     /**

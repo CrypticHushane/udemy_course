@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use App\Pages;
-
+use App\Special;
 class ContactUsController extends Controller
 {
     public function index(Request $request){
@@ -35,13 +35,19 @@ class ContactUsController extends Controller
     }
 
     public function pages(){
-        $pages = Pages::all();
         
+        $pages = Pages::all();
+
+        $specials = Special::all();
+
         return view('welcome',[
             "pages" => $pages,
+            "specials" => $specials,
         ]);
 
     }
+
+    
 }
     
 
