@@ -16,21 +16,19 @@
     </head>
     <body>
         <!-- Image and text -->
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">
             <img src="./assets/StoppageTime1.png" width="30" height="30" class="d-inline-block align-top" alt="">
             {{ config('app.name')}}
             </a>
-            @foreach ($pages as $page)
-                                <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
-                            @endforeach
-                        
-        </nav>
-        <div id="app">
-            <div class="flex-center position-ref full-height">
+            <div class="flex position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
+                       
                         @auth
+                        @foreach ($pages as $page)
+                            <a href="{{ url('/'. $page['slug'])}}">{{$page['name']}}</a>
+                        @endforeach
                            
                         @else
                             <a href="{{ route('login') }}">Login</a>
@@ -43,7 +41,9 @@
                         @endauth
                     </div>
                 @endif
-            </div>
+            </div>         
+        </nav>
+        <div id="app">
         <div class="row bg-dark">
             @foreach ($specials as $special)
             <div class="col-md-3">
