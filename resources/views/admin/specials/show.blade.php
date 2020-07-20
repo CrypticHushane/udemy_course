@@ -26,7 +26,7 @@
               </span>
             
               <p class="card-text">{{$special["description"]}}</p>
-                <a href="/admin/specials/{{$special->id}}/" class="btn btn-primary">View Special</a>
+                <a href="/" class="btn btn-primary">Home</a>
             </div>
           </div>
         </div>
