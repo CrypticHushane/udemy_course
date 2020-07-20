@@ -24,9 +24,9 @@ class SpecialsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view("admin.specials.create");
     }
 
     /**
@@ -37,7 +37,18 @@ class SpecialsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $special = new Special();
+
+        $special->name = $input['name'];
+        $special->description = $input['description'];
+        $special->was_priced = $input['was_priced'];
+        $special->current_price = $input['current_price'];
+
+        $special->save();
+
+        return redirect('/admin/specials');
     }
 
     /**
@@ -59,7 +70,10 @@ class SpecialsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $special = Special::where('id',$id)->first();
+        return view('admin.specials.edit',[
+            'special' => $special
+        ]);
     }
 
     /**
@@ -71,7 +85,18 @@ class SpecialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $special = Special::where('id', $id)->first();
+
+        $special->name = $input['name'];
+        $special->description = $input['description'];
+        $special->was_priced = $input['was_priced'];
+        $special->current_price = $input['current_price'];
+
+        $special->save();
+
+        return redirect('/admin/specials');
     }
 
     /**
@@ -82,6 +107,9 @@ class SpecialsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Special::where('id', $id)->delete();
+        return redirect('/admin/specials');
+
+
     }
 }

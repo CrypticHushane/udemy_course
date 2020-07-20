@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,17 +14,19 @@
 
         
     </head>
-</head>
+
 <body>
     <nav class="navbar navbar-light bg-light">
         <a href="/">
             <div class="btn btn-primary">Home</div>
         </a>
+        <a href="/contact-us">
+            <div class="btn btn-primary">Contact Us</div>
+        </a>
     </nav>
     <table class="table table-striped table-dark">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
             <th scope="col">Was ($)</th>
@@ -35,19 +36,25 @@
         <tbody>
             @foreach ($specials as $special)
                 <tr>
-                <th scope="row">{{$special['id']}}</th>
                     <td>{{$special['name']}}</td>
                     <td>{{$special['description']}}</td>
                     <td>${{$special['was_priced']}}</td>
                     <td>${{$special['current_price']}}</td>
+                <td><a href="/admin/specials/{{ $special['id']}}/edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
+                    <form method="post" action="/admin/specials/{{ $special['id']}}">
+                        @method('delete');
+                        @csrf
+                        <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                    </form>
+                    
                 </tr>
             @endforeach
           
         </tbody>
       </table>
-      <a href="/admin/specials">
+      <a href="/admin/specials/create">
         <div class="btn btn-primary">Add New Special</div>
-    </a>
+    </a> 
 </body>
 </html>
 
