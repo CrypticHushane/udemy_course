@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'ContactUsController@pages');
 Route::get('/contact-us', function(){ return view('mails.contactus');});
 Route::get('upload-image', 'UploadImageController@index');
+Route::post('/upload-image/upload', 'UploadImageController@uploadImage');
 Route::post('/contactus/ajax', 'ContactUsController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
